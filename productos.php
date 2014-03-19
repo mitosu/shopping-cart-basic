@@ -1,9 +1,9 @@
 <?php
 session_start(); //Inicio sesion 
-if (isset($_POST['nombre'])) {
-    $nombre = $_POST['nombre'];
-    $_SESSION['usuario'] = $nombre; //Guardo el nombre del usuario en sesion 
-    $_SESSION["pedido"] = array();
+if (isset($_POST['name'])) {
+    $nombre = $_POST['name'];
+    $_SESSION['user'] = $nombre; //Guardo el nombre del usuario en sesion 
+    $_SESSION["order"] = array();
 }
 if (isset($_POST['agregar'])) { //Esto detecta si se envió el primer formulario, ''agregar'' es un input hidden en el 
 // formulario.
@@ -15,19 +15,19 @@ if (isset($_POST['agregar'])) { //Esto detecta si se envió el primer formulario
     $claves = array_keys($_POST);
     $producto = $claves[1];
 
-    if (array_key_exists("$producto", $_SESSION['pedido'])) {
-        $cantidad = $_SESSION['pedido']["$producto"];
-        $_SESSION['pedido']["$producto"] = ++$cantidad;
+    if (array_key_exists("$producto", $_SESSION['order'])) {
+        $cantidad = $_SESSION['order']["$producto"];
+        $_SESSION['order']["$producto"] = ++$cantidad;
     } else {
-        $_SESSION['pedido']["$producto"] = 1;
+        $_SESSION['order']["$producto"] = 1;
     }
 }
 if (isset($_GET['quitar'])) { //Si se envió el segundo formulario 
     $claves = array_keys($_GET);
     $producto = $claves[1];
-    unset($_SESSION['pedido'][$producto]); //Eliminar la posicion del arreglo 
+    unset($_SESSION['order'][$producto]); //Eliminar la posicion del arreglo 
 }
-echo "Bienvenido : " . $_SESSION['usuario'];
+echo "Bienvenido : " . $_SESSION['user'];
 ?> 
 <html> 
     <head> 
@@ -117,8 +117,8 @@ echo "Bienvenido : " . $_SESSION['usuario'];
                             <h1>En el carrito de compras tiene los siguientes productos</h1> 
                             <input type="hidden" name="quitar"> 
                             <?php
-                            if (!empty($_SESSION['pedido'])) { //Si hay productos en el carrito
-                                foreach ($_SESSION['pedido'] as $prod => $unidades) {
+                            if (!empty($_SESSION['order'])) { //Si hay productos en el carrito
+                                foreach ($_SESSION['order'] as $prod => $unidades) {
                                     echo "$unidades unidades del producto $prod <br/>";
                                     echo "<input type='Submit' name='$prod' value='Quitar'><br>";
                                 }

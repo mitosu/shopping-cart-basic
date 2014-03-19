@@ -10,7 +10,7 @@ session_start();
         <h1 align='center'>FELICIDADES</h1> <h2 align='center'>acaba de comprar</h2>
         <?php
         $totalUnidades = 0;
-        foreach ($_SESSION['pedido'] as $prod => $unidades) {
+        foreach ($_SESSION['order'] as $prod => $unidades) {
             $totalUnidades+=$unidades;
             echo "<p align='center'>$unidades $prod</p>";
         }

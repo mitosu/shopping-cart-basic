@@ -16,7 +16,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css"/>
         <link rel="stylesheet" type="text/css" href="css/rule_responsive.css"/>
         <link rel="stylesheet" type="text/css" href="css/stylecart.css"/>
-        <title>Electrodomesticos El Baratillo</title>
+        <title>Shopping Cart</title>
     </head>
     <body class="home">
         <div id="main" class="container">
@@ -34,7 +34,7 @@ and open the template in the editor.
                         <h1>Bienvenido a la tienda</h1> 
                         <form action="productos.php" method="post"> 
                             <label for="nombre">Ingrese su nombre</label>
-                            <input id="nombre" name="nombre" type="text">
+                            <input id="nombre" name="name" type="text">
                             <input name="ingresar" type="Submit" value="ingresar"> 
                         </form> 
                     </div>
