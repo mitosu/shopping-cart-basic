@@ -1,0 +1,47 @@
+/* 
+    Author     : Miguel Angel Torres
+*/
+
+.home{
+    background-color: #003399;
+}
+
+.productos{
+    background-color: #cccc00;
+}
+
+.confirmado{
+    background-color: #ff6633;
+}
+
+.span12 h1{
+    text-align: center;
+}
+
+#main{
+    height: 0px;
+    width: 0px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#content{
+    background: #0081c2;
+    margin: -225px;
+    height: 450px;
+    width: 450px;
+    color: #cccccc;
+}
+
+.tabla_productos{
+    border: solid;
+    border-color: #666666;
+    padding: 10px;
+    width: 100%;
+}
+
+tr td{
+    width: 25%;
+}
